@@ -3,7 +3,7 @@ import './Home.css'
 const Home = () => {
   return (
     <div className="home home2 grid grid-cols-2">
-      <div className="col-span-1 flex justify-center items-center  font-sans">
+      <div className="col-span-1 flex justify-center items-center font-sans">
         <div className='ml-48 '>
           <h1 className="text-5xl font-bold">Hi There,</h1>
           <h1 className="text-5xl font-bold mt-8">I'm Mohamed Said</h1>
