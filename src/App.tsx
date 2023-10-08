@@ -21,6 +21,7 @@ function App() {
       </Routes>
     </BrowserRouter>
     <About/>
+    <Works/>
     </>
   )
 }
