@@ -9,6 +9,8 @@ import Navbar from './components/Layout/Navbar';
 
 function App() {
 
+
+
   return (
     <>
     <Navbar/>
@@ -22,6 +24,7 @@ function App() {
     </BrowserRouter>
     <About/>
     <Works/>
+    <Contact/>
     </>
   )
 }
