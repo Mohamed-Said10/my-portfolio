@@ -3,5 +3,6 @@ interface Project {
     description:string,
     imageUrl: string,
     category: string,
+    videoUrl: string,
 } 
-export  default Project
+export default Project
