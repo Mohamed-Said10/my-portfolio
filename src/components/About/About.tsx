@@ -1,7 +1,7 @@
 const About = () => {
   return (
     <>
-      <div className="grid grid-cols-2 h-screen">
+      <div className="grid grid-cols-2 h-screen section" id="about">
         <div className="col-span-1 flex flex-col justify-center items-center">
           <div className="flex w-2/3 p-10 bg-white-200 shadow-xl">
             <div className="flex h-24 w-24 bg-yellow-700 rounded-full">

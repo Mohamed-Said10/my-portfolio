@@ -18,14 +18,20 @@ const Works = () => {
     setVideoVisible(false);
   };
 
+  const scrollToRef = (ref: HTMLElement) => {
+    if (ref) {
+      ref.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
-      <div className="background min-h-screen flex flex-col justify-center items-center">
+      <div className="background min-h-screen flex flex-col justify-center items-center section" id="works">
       <div className="">
-        <ProjectCarousel openVideoDisplay={openVideoDisplay} />
+        <ProjectCarousel openVideoDisplay={openVideoDisplay} scrollToRef={scrollToRef}/>
       </div>
       {selectedProject && (
-        <div className="mb-8 w-3/4">
+        <div className="mb-8 w-3/4" id="video">
           <h2 className="text-2xl font-semibold mb-2">
             {selectedProject.title}
           </h2>

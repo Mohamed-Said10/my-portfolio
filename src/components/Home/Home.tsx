@@ -2,7 +2,7 @@ import './Home.css'
 
 const Home = () => {
   return (
-    <div className="home home2 grid grid-cols-2">
+    <div className="home home2 grid grid-cols-2 section" id="home">
       <div className="col-span-1 flex justify-center items-center font-sans">
         <div className='ml-48 '>
           <h1 className="text-5xl font-bold">Hi There,</h1>
@@ -16,16 +16,6 @@ const Home = () => {
             <img src="src\components\Home\photo.png" className="h-fit " alt="myimage"/>
           </div>
       </div>
-      {/*<section>
-        <div className="h-screen w-screen grid grid-rows-2">
-          <div className="w-full h-full bg-red-900">
-            <p>p1</p>
-          </div>
-          <div className="w-full h-full bg-blue-900">
-            <p>p2</p>
-          </div>
-        </div>
-</section>*/}
     </div>
   );
 };

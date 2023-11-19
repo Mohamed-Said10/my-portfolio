@@ -1,22 +1,19 @@
 import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import '../Home/Home.css';
 
-interface NavLinkProps {
-  to: string;
-  className?: string;
-  children: string;
-  activeClassName?: string;
+interface NavbarProps {
+  scrollToRef: (ref: HTMLElement) => void;
 }
 
-const Navbar: React.FC = () => {
+const Navbar: React.FC<NavbarProps> = ({ scrollToRef }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleOutsideClick = (event:any) => {
+  const handleOutsideClick = (event: any) => {
     if (!event.target.closest('#menu-button') && isMenuOpen) {
       setIsMenuOpen(false);
     }
@@ -27,7 +24,7 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto flex justify-between items-center pl-4 pr-4 lg:pl-40 lg:pr-40">
         <div className="text-black">
           <h1 className="text-xl font-semibold hover:text-amber-500">
-            <Link to="/">Mohamed Said</Link>
+            <NavLink to="/">Mohamed Said</NavLink>
           </h1>
         </div>
 
@@ -36,9 +33,7 @@ const Navbar: React.FC = () => {
           <button
             id="menu-button"
             onClick={toggleMenu}
-            className={`text-black focus:outline-none focus:text-amber-500 ${
-              isMenuOpen ? 'open' : ''
-            }`}
+            className={`text-black focus:outline-none focus:text-amber-500 ${isMenuOpen ? 'open' : ''}`}
           >
             ☰
           </button>
@@ -46,57 +41,55 @@ const Navbar: React.FC = () => {
 
         {/* Navigation links */}
         <div
-          className={`lg:flex flex-end ${
-            isMenuOpen ? 'flex' : 'hidden'
-          } lg:items-center absolute top-full z-10`}
+          className={`lg:flex flex-end ${isMenuOpen ? 'flex' : 'hidden'} lg:items-center absolute top-full z-10`}
           style={{
-            flexDirection: window.innerWidth < 768 && isMenuOpen
-              ? 'column'
-              : 'row',
-            position: window.innerWidth < 768 && isMenuOpen
-              ? 'absolute'
-              : 'static',
+            flexDirection: window.innerWidth < 768 && isMenuOpen ? 'column' : 'row',
+            position: window.innerWidth < 768 && isMenuOpen ? 'absolute' : 'static',
             right: window.innerWidth < 768 && isMenuOpen ? '0' : 'auto',
           }}
-          onClick={handleOutsideClick} // Add event listener to close menu on outside click
+          onClick={handleOutsideClick}
         >
           <NavLink
             to="/"
-            className={({ isActive }) => (
+            onClick={() => scrollToRef(document.getElementById('home')!)}
+            className={({ isActive }) =>
               isActive
-                ? 'text-amber-500 rounded-2xl font-semibold'
+                ? 'text-amber-500 rounded-2xl  lg:px-4 font-semibold'
                 : 'hover:text-amber-500 rounded-2xl lg:px-4 lg:py-2 md:px-4 font-semibold'
-            )}
+            }
           >
             HOME
           </NavLink>
           <NavLink
             to="/about"
-            className={({ isActive }) => (
+            onClick={() => scrollToRef(document.getElementById('about')!)}
+            className={({ isActive }) =>
               isActive
-                ? 'text-amber-500 rounded-2xl font-semibold'
+                ? 'text-amber-500 rounded-2xl  lg:px-4 font-semibold'
                 : 'hover:text-amber-500 rounded-2xl lg:px-4 lg:py-2 md:px-4 font-semibold'
-            )}
+            }
           >
             ABOUT
           </NavLink>
           <NavLink
             to="/works"
-            className={({ isActive }) => (
+            onClick={() => scrollToRef(document.getElementById('works')!)}
+            className={({ isActive }) =>
               isActive
-                ? 'text-amber-500 rounded-2xl md:px-4 font-semibold'
-                : 'hover:text-amber-500 rounded-2xl lg:px-4 lg:py-2 md:px-4 font-semibold'
-            )}
+                ? 'text-amber-500 rounded-2xl  lg:px-4 font-semibold'
+                : 'hover:text-amber-500 rounded-2xl lg:px-4 lg:py-2 font-semibold'
+            }
           >
             WORK
           </NavLink>
           <NavLink
             to="/contact"
-            className={({ isActive }) => (
+            onClick={() => scrollToRef(document.getElementById('contact')!)}
+            className={({ isActive }) =>
               isActive
-                ? 'text-amber-500 rounded-2xl md:px-4 font-semibold'
-                : 'hover:text-amber-500 rounded-2xl lg:px-4 lg:py-2 font-semibold'
-            )}
+                ? 'text-amber-500 rounded-2xl  lg:px-4 font-semibold'
+                : 'hover:text-amber-500 rounded-2xl  lg:px-4 font-semibold'
+            }
           >
             CONTACT
           </NavLink>

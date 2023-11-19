@@ -37,6 +37,7 @@ const projects: Project[] = [
 
 interface ProjectCarouselProps {
   openVideoDisplay: (project: Project) => void;
+  scrollToRef: (ref: HTMLElement) => void;
 }
 
 
@@ -50,7 +51,8 @@ const slideRight = () => {
   slider ? (slider.scrollLeft = slider.scrollLeft + 600) : null;
 };
 
-const ProjectCarousel:React.FC<ProjectCarouselProps> = ({ openVideoDisplay }) => {
+
+const ProjectCarousel:React.FC<ProjectCarouselProps> = ({ openVideoDisplay, scrollToRef }) => {
   
   return (
     <>
@@ -82,7 +84,11 @@ const ProjectCarousel:React.FC<ProjectCarouselProps> = ({ openVideoDisplay }) =>
                 <textarea className="p-2 bg-slate-100 w-full h-32 no-underline	">{project.description}</textarea>
               </div>
                 <div className="py-4">
-                  <button onClick={() => openVideoDisplay(project)} className="bg-yellow-700 text-white px-8 py-1 rounded-sm mb-4 hover:scale-110 ease-in-out duration-300">Preview</button>
+                  <button onClick={async () => {
+                    await openVideoDisplay(project);
+                    scrollToRef(document.getElementById('video')!);
+                  }
+                    } className="bg-yellow-700 text-white px-8 py-1 rounded-sm mb-4 hover:scale-110 ease-in-out duration-300">Preview</button>
                 </div>
               </div>
             </div>
