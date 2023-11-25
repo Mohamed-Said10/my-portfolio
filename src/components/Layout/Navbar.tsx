@@ -29,7 +29,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToRef }) => {
         </div>
 
         {/* Responsive menu button */}
-        <div className="lg:hidden">
+        <div className="lg:hidden mr-4">
           <button
             id="menu-button"
             onClick={toggleMenu}
@@ -41,7 +41,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToRef }) => {
 
         {/* Navigation links */}
         <div
-          className={`lg:flex flex-end ${isMenuOpen ? 'flex' : 'hidden'} lg:items-center absolute top-full z-10`}
+          className={`lg:flex mr-4 ${isMenuOpen ? 'flex' : 'hidden'} items-center absolute top-full z-10`}
           style={{
             flexDirection: window.innerWidth < 768 && isMenuOpen ? 'column' : 'row',
             position: window.innerWidth < 768 && isMenuOpen ? 'absolute' : 'static',
@@ -54,8 +54,8 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToRef }) => {
             onClick={() => scrollToRef(document.getElementById('home')!)}
             className={({ isActive }) =>
               isActive
-                ? 'text-amber-500 rounded-2xl  lg:px-4 font-semibold'
-                : 'hover:text-amber-500 rounded-2xl lg:px-4 lg:py-2 md:px-4 font-semibold'
+                ? 'text-amber-500 rounded-2xl  lg:px-4 font-semibold text-center'
+                : 'hover:text-amber-500 rounded-2xl lg:px-4 lg:py-2 md:px-4 md:py-2 sm:px-8 sm:py-2 font-semibold text-center'
             }
           >
             HOME
@@ -65,8 +65,8 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToRef }) => {
             onClick={() => scrollToRef(document.getElementById('about')!)}
             className={({ isActive }) =>
               isActive
-                ? 'text-amber-500 rounded-2xl  lg:px-4 font-semibold'
-                : 'hover:text-amber-500 rounded-2xl lg:px-4 lg:py-2 md:px-4 font-semibold'
+                ? 'text-amber-500 rounded-2xl  lg:px-4 font-semibold text-center'
+                : 'hover:text-amber-500 rounded-2xl lg:px-4 lg:py-2 md:px-4 md:py-2 sm:px-8 sm:py-2 font-semibold text-center'
             }
           >
             ABOUT
@@ -76,8 +76,8 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToRef }) => {
             onClick={() => scrollToRef(document.getElementById('works')!)}
             className={({ isActive }) =>
               isActive
-                ? 'text-amber-500 rounded-2xl  lg:px-4 font-semibold'
-                : 'hover:text-amber-500 rounded-2xl lg:px-4 lg:py-2 font-semibold'
+                ? 'text-amber-500 rounded-2xl  lg:px-4 font-semibold text-center'
+                : 'hover:text-amber-500 rounded-2xl lg:px-4 lg:py-2 md:px-4 md:py-2 sm:px-8 sm:py-2 font-semibold text-center'
             }
           >
             WORK
@@ -87,8 +87,8 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToRef }) => {
             onClick={() => scrollToRef(document.getElementById('contact')!)}
             className={({ isActive }) =>
               isActive
-                ? 'text-amber-500 rounded-2xl  lg:px-4 font-semibold'
-                : 'hover:text-amber-500 rounded-2xl  lg:px-4 font-semibold'
+                ? 'text-amber-500 rounded-2xl  lg:px-4 font-semibold text-center'
+                : 'hover:text-amber-500 rounded-2xl lg:px-4 lg:py-2 md:px-4 md:py-2 sm:px-8 sm:py-2 font-semibold text-center'
             }
           >
             CONTACT
