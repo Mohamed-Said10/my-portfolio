@@ -1,5 +1,3 @@
-import React, { useRef } from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";

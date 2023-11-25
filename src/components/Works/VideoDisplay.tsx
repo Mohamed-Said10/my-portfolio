@@ -1,6 +1,5 @@
 import React from 'react';
 import Project from './Project';
-import YouTubeVideo from './YouTubeVideo';
 
 interface VideoDisplayProps {
   selectedProject: Project | null;
