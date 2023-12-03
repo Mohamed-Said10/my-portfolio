@@ -5,19 +5,19 @@ const About = () => {
         <div className="col-span-1 flex flex-col justify-center items-center">
           <div className="flex w-2/3 p-10 bg-white-200 shadow-xl">
             <div className="flex h-24 w-24 bg-yellow-700 rounded-full">
-              <img src="../src/assets/monitor.png" className="w-10 m-auto" />
+              <img src="../public/assets/monitor.png" className="w-10 m-auto" />
             </div>
             <h3 className="m-auto text-4xl font-semibold">Design</h3>
           </div>
           <div className="flex w-2/3 p-10 bg-white-200 my-12 shadow-xl">
             <div className="flex h-24 w-24 bg-yellow-700 rounded-full">
-              <img src="../src/assets/monitor.png" className="w-10 m-auto" />
+              <img src="../public/assets/monitor.png" className="w-10 m-auto" />
             </div>
             <h3 className="m-auto text-3xl font-semibold">Development</h3>
           </div>
           <div className="flex w-2/3 p-10 bg-white-200 shadow-xl">
             <div className="flex h-24 w-24 bg-yellow-700 rounded-full">
-              <img src="../src/assets/monitor.png" className="w-10 m-auto" />
+              <img src="../public/assets/monitor.png" className="w-10 m-auto" />
             </div>
             <h3 className="m-auto text-4xl font-semibold">Test</h3>
           </div>

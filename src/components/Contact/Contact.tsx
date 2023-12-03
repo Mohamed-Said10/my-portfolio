@@ -18,7 +18,7 @@ const Contact = () => {
           <div className="flex w-full p-5">
             <div className="h-10 w-10 bg-white rounded-full">
               <img
-                src="../src/assets/gmail.png"
+                src="../public/assets/gmail.png"
                 className="w-10 m-auto shadow-xl"
                 alt="Monitor Icon"
               />
@@ -30,7 +30,7 @@ const Contact = () => {
           <div className="flex w-full p-5 items-center">
             <div className="h-12 w-12 bg-white rounded-full">
               <img
-                src="../src/assets/linkedin.png"
+                src="../public/assets/linkedin.png"
                 className="w-10 m-auto shadow-xl"
                 alt="Monitor Icon"
               />
@@ -42,7 +42,7 @@ const Contact = () => {
           <div className="flex w-full p-5 items-center">
             <div className="h-12 w-12 bg-white rounded-full">
               <img
-                src="../src/assets/github.png"
+                src="../public/assets/github.png"
                 className="w-10 m-auto shadow-xl"
                 alt="Monitor Icon"
               />
