@@ -17,7 +17,7 @@ const VideoDisplay: React.FC<VideoDisplayProps> = ({ selectedProject, onClose })
     <div className="w-3/4" id="video">
       <h2 className="text-2xl font-semibold mb-2">{selectedProject.title}</h2>
       <p className="text-gray-700">{selectedProject.description}</p>
-      <button onClick={onClose} className="mt-4 bg-red-500 text-white px-4 py-2 rounded-md">Close</button>
+      <button onClick={onClose} className="mt-4 bg-yellow-700 text-white px-4 py-2 rounded-md">Close</button>
     </div>
   );
 };

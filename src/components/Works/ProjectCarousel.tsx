@@ -24,20 +24,11 @@ const projects: Project[] = [
     videoUrl: "https://youtu.be/WmK9gl9ynyk?si=CBQuOTI8fmdQh6Ap",
   },
   {
-    title: "Project 3",
-    description: "Description of Project 3",
+    title: "My Portfolio Website",
+    description: "My Portfolio, developped using React and Typescript",
     imageUrl: "project3.jpg",
     category: "Web Application",
-    videoUrl: "",
-  },
-  {
-    title: "Project 4",
-    description: "- Design and development of an e-commerce web application."+'\n'+
-    "- MVC architecture using Laravel."+'\n'+
-    "- Manage authentication using sessions",
-    imageUrl: "project4.jpg",
-    category: "Web Application",
-    videoUrl: "",
+    videoUrl: "https://youtu.be/fcqP9Rhv-OU",
   },
 ];
 

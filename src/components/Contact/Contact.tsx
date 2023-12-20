@@ -12,10 +12,10 @@ const Contact = () => {
           </h1>
         </div>
         <div className="col-span-1 flex flex-col items-center">
-          <h1 className="text-3xl font-semibold text-yellow-700 mb-8">
-            Information
+        <h1 className="text-3xl font-semibold text-yellow-700 mb-8">
+            Get in touch
           </h1>
-          <div className="flex w-full p-5">
+          <div className="flex w-full p-5 items-center">
             <div className="h-10 w-10 bg-white rounded-full">
               <img
                 src="/assets/gmail.png"
@@ -23,7 +23,7 @@ const Contact = () => {
                 alt="Monitor Icon"
               />
             </div>
-            <h3 className="ml-3 text-xl font-semibold w-40">
+            <h3 className="ml-3 text-xl font-semibold w-80">
               <a href="mailto:erguibi.mohamed.said21@gmail.com" target="_blank" rel="noopener noreferrer">erguibi.mohamed.said21@gmail.com</a>
             </h3>
           </div>
@@ -35,8 +35,8 @@ const Contact = () => {
                 alt="Monitor Icon"
               />
             </div>
-            <h3 className="ml-3 text-xl font-semibold w-60">
-              <a href="https://www.linkedin.com/in/mohamed-said-er/" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/mohamed-said-er/</a>
+            <h3 className="ml-3 text-xl font-semibold w-80">
+              <a href="https://www.linkedin.com/in/mohamed-said-er/" target="_blank" rel="noopener noreferrer">Find me on linkedIn</a>
             </h3>
           </div>
           <div className="flex w-full p-5 items-center">
@@ -47,8 +47,8 @@ const Contact = () => {
                 alt="Monitor Icon"
               />
             </div>
-            <h3 className="ml-3 text-xl font-semibold w-60">
-              <a href="https://github.com/Mohamed-Said10" target="_blank" rel="noopener noreferrer">https://github.com/Mohamed-Said10</a>
+            <h3 className="ml-3 text-xl font-semibold w-80">
+              <a href="https://github.com/Mohamed-Said10" target="_blank" rel="noopener noreferrer">Take a look on my GitHub</a>
             </h3>
           </div>
         </div>
