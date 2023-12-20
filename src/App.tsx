@@ -4,7 +4,7 @@ import Contact from "./components/Contact/Contact";
 import Works from "./components/Works/Works";
 import "./App.css";
 import Navbar from "./components/Layout/Navbar";
-import Footer from "./components/Footer/footer";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   

@@ -2,6 +2,7 @@ import Project from "./Project";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import './Works.css'
 
+
 const projects: Project[] = [
   {
     title: "Redesign of a web application for employee monitoring",
