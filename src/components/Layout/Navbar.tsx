@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import '../Home/Home.css';
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import "../Home/Home.css";
 
 interface NavbarProps {
   scrollToRef: (ref: HTMLElement) => void;
@@ -14,7 +14,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToRef }) => {
   };
 
   const handleOutsideClick = (event: any) => {
-    if (!event.target.closest('#menu-button') && isMenuOpen) {
+    if (!event.target.closest("#menu-button") && isMenuOpen) {
       setIsMenuOpen(false);
     }
   };
@@ -33,62 +33,68 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToRef }) => {
           <button
             id="menu-button"
             onClick={toggleMenu}
-            className={`text-black focus:outline-none focus:text-amber-500 ${isMenuOpen ? 'open' : ''}`}
+            className={`text-black focus:outline-none focus:text-amber-500 ${
+              isMenuOpen ? "open" : ""
+            }`}
           >
-            ☰
+            <div className="bg-white rounded-full px-2 py-1 text-center">☰</div>
           </button>
         </div>
 
         {/* Navigation links */}
         <div
-          className={`lg:flex mr-4 ${isMenuOpen ? 'flex' : 'hidden'} items-center absolute top-full z-10`}
+          className={`lg:flex mr-4 ${
+            isMenuOpen ? "flex" : "hidden"
+          } items-center absolute top-full z-10`}
           style={{
-            flexDirection: window.innerWidth < 768 && isMenuOpen ? 'column' : 'row',
-            position: window.innerWidth < 768 && isMenuOpen ? 'absolute' : 'static',
-            right: window.innerWidth < 768 && isMenuOpen ? '0' : 'auto',
+            flexDirection:
+              window.innerWidth < 768 && isMenuOpen ? "column" : "row",
+            position:
+              window.innerWidth < 768 && isMenuOpen ? "absolute" : "static",
+            right: window.innerWidth < 768 && isMenuOpen ? "0" : "auto",
           }}
           onClick={handleOutsideClick}
         >
           <NavLink
             to="/"
-            onClick={() => scrollToRef(document.getElementById('home')!)}
+            onClick={() => scrollToRef(document.getElementById("home")!)}
             className={({ isActive }) =>
               isActive
-                ? 'text-amber-500 rounded-2xl  lg:px-4 font-semibold text-center'
-                : 'hover:text-amber-500 rounded-2xl lg:px-4 lg:py-2 md:px-4 md:py-2 sm:px-8 sm:py-2 font-semibold text-center'
+                ? "text-amber-500 rounded-2xl  lg:px-4 font-semibold text-center"
+                : "hover:text-amber-500 rounded-2xl lg:px-4 lg:py-2 md:px-4 md:py-2 sm:px-8 sm:py-2 font-semibold text-center"
             }
           >
             HOME
           </NavLink>
           <NavLink
             to="/about"
-            onClick={() => scrollToRef(document.getElementById('about')!)}
+            onClick={() => scrollToRef(document.getElementById("about")!)}
             className={({ isActive }) =>
               isActive
-                ? 'text-amber-500 rounded-2xl  lg:px-4 font-semibold text-center'
-                : 'hover:text-amber-500 rounded-2xl lg:px-4 lg:py-2 md:px-4 md:py-2 sm:px-8 sm:py-2 font-semibold text-center'
+                ? "text-amber-500 rounded-2xl  lg:px-4 font-semibold text-center"
+                : "hover:text-amber-500 rounded-2xl lg:px-4 lg:py-2 md:px-4 md:py-2 sm:px-8 sm:py-2 font-semibold text-center"
             }
           >
             ABOUT
           </NavLink>
           <NavLink
             to="/works"
-            onClick={() => scrollToRef(document.getElementById('works')!)}
+            onClick={() => scrollToRef(document.getElementById("works")!)}
             className={({ isActive }) =>
               isActive
-                ? 'text-amber-500 rounded-2xl  lg:px-4 font-semibold text-center'
-                : 'hover:text-amber-500 rounded-2xl lg:px-4 lg:py-2 md:px-4 md:py-2 sm:px-8 sm:py-2 font-semibold text-center'
+                ? "text-amber-500 rounded-2xl  lg:px-4 font-semibold text-center"
+                : "hover:text-amber-500 rounded-2xl lg:px-4 lg:py-2 md:px-4 md:py-2 sm:px-8 sm:py-2 font-semibold text-center"
             }
           >
             WORK
           </NavLink>
           <NavLink
             to="/contact"
-            onClick={() => scrollToRef(document.getElementById('contact')!)}
+            onClick={() => scrollToRef(document.getElementById("contact")!)}
             className={({ isActive }) =>
               isActive
-                ? 'text-amber-500 rounded-2xl  lg:px-4 font-semibold text-center'
-                : 'hover:text-amber-500 rounded-2xl lg:px-4 lg:py-2 md:px-4 md:py-2 sm:px-8 sm:py-2 font-semibold text-center'
+                ? "text-amber-500 rounded-2xl lg:px-4 font-semibold text-center"
+                : "hover:text-amber-500 rounded-2xl lg:px-4 lg:py-2 md:px-4 md:py-2 sm:px-8 sm:py-2 font-semibold text-center"
             }
           >
             CONTACT
