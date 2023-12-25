@@ -1,6 +1,50 @@
+import React, { useState } from 'react';
+
 const Contact = () => {
+  const [senderEmail, setSenderEmail] = useState('');
+  const [emailContent, setEmailContent] = useState('');
+
+  const handleSenderEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSenderEmail(e.target.value);
+  };
+
+  const handleEmailContentChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setEmailContent(e.target.value);
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  
+    try {
+      const response = await fetch('http://localhost:3000/addMessage', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: senderEmail,
+          message: emailContent,
+        }),
+      });
+  
+      if (response.ok) {
+        // Request was successful, show success message or perform any other action
+        console.log('Message sent successfully!');
+      } else {
+        // Request failed, handle the error
+        console.error('Failed to send message');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  
+    setSenderEmail('');
+    setEmailContent('');
+  };
+
   return (
     <>
+    <div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center h-screen" id="contact">
         <div className="lg:p-4">
           <h1 className="text-3xl font-semibold text-center">
@@ -10,48 +54,50 @@ const Contact = () => {
           <h1 className="text-3xl italic font-semibold mt-20 text-center">
             Start by <span className="text-yellow-700">saying hi</span>
           </h1>
+          <div className="flex justify-center mt-8">
+            <button
+              className="bg-blue-600 text-white font-semibold px-6 py-3 rounded-md shadow-md mr-4"
+              onClick={() => window.open('https://www.linkedin.com/in/mohamed-said-er/')}
+            >
+              LinkedIn
+            </button>
+            <button
+              className="bg-gray-800 text-white font-semibold px-6 py-3 rounded-md shadow-md"
+              onClick={() => window.open('https://github.com/Mohamed-Said10')}
+            >
+              GitHub
+            </button>
+          </div>
         </div>
         <div className="flex flex-col items-center">
           <h1 className="text-3xl font-semibold text-yellow-700 mb-8">
             Get in touch
           </h1>
-          <div className="flex w-full p-5 items-center">
-            <div className="h-10 w-10 bg-white rounded-full">
-              <img
-                src="/assets/gmail.png"
-                className="w-10 m-auto shadow-xl"
-                alt="Monitor Icon"
-              />
-            </div>
-            <h3 className="ml-3 lg:text-xl sm:text-sm font-semibold w-80">
-              <a href="mailto:m.erguibi02@gmail.com" target="_blank" rel="noopener noreferrer">m.erguibi02@gmail.com</a>
-            </h3>
-          </div>
-          <div className="flex w-full p-5 items-center">
-            <div className="h-12 w-12 bg-white rounded-full">
-              <img
-                src="/assets/linkedin.png"
-                className="w-10 m-auto shadow-xl"
-                alt="Monitor Icon"
-              />
-            </div>
-            <h3 className="ml-3 lg:text-xl sm:text-sm font-semibold w-80">
-              <a href="https://www.linkedin.com/in/mohamed-said-er/" target="_blank" rel="noopener noreferrer">Find me on linkedIn</a>
-            </h3>
-          </div>
-          <div className="flex w-full p-5 items-center">
-            <div className="h-12 w-12 bg-white rounded-full">
-              <img
-                src="/assets/github.png"
-                className="w-10 m-auto shadow-xl"
-                alt="Monitor Icon"
-              />
-            </div>
-            <h3 className="ml-3 lg:text-xl sm:text-sm font-semibold w-80">
-              <a href="https://github.com/Mohamed-Said10" target="_blank" rel="noopener noreferrer">Take a look on my GitHub</a>
-            </h3>
-          </div>
+          <form onSubmit={handleSubmit} className="flex flex-col items-center">
+            <input
+              type="email"
+              placeholder="Your Email"
+              value={senderEmail}
+              onChange={handleSenderEmailChange}
+              className="w-80 border border-gray-300 rounded-md p-2 focus:outline-none mb-4"
+              required
+            />
+            <textarea
+              className="w-80 h-40 border border-gray-300 rounded-md p-2 focus:outline-none mb-4"
+              placeholder="Your message..."
+              value={emailContent}
+              onChange={handleEmailContentChange}
+              required
+            />
+            <button
+              type="submit"
+              className="bg-yellow-500 text-white font-semibold px-6 py-3 rounded-md shadow-md"
+            >
+              Send
+            </button>
+          </form>
         </div>
+      </div>
       </div>
     </>
   );

@@ -38,7 +38,7 @@ const projects: Project[] = [
     description:
       "UI/UX modeling, design, and development of a web application" +
       " managing customer incident tickets\n" +
-      "Architecture REST en utilisant Spring Boot / React.",
+      "REST architecture using Spring Boot for the backend and React for the frontend.",
     imageUrl: "project2.jpg",
     category: "Web Application",
     videoUrl: "https://youtu.be/WmK9gl9ynyk?si=CBQuOTI8fmdQh6Ap",
