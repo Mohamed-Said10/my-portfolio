@@ -16,7 +16,7 @@ const Contact = () => {
     e.preventDefault();
   
     try {
-      const response = await fetch('http://localhost:3000/addMessage', {
+      const response = await fetch('http://34.229.157.254:3000/addMessage', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
