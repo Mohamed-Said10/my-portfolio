@@ -66,10 +66,11 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
 }) => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsSmallScreen(window.innerWidth < 640); // Adjust this breakpoint as needed
-    };
+  const handleResize = () => {
+    setIsSmallScreen(window.innerWidth < 640); // Adjust this breakpoint as needed
+  };
+
+  useEffect(() => {    
     handleResize(); // Check screen size on mount
     window.addEventListener("resize", handleResize);
     return () => {
@@ -109,7 +110,7 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
               {projects.map((project) => (
                 <div
                   key={project.title}
-                  className="bg-white w-screen px-8 py-6 m-2 rounded-lg shadow-md cursor-pointer hover:shadow-xl transition duration-300"
+                  className="bg-white w-fit px-6 py-6 m-2 rounded-lg shadow-md cursor-pointer hover:shadow-xl transition duration-300"
                 >
                   <div className="text-center">
                     <p className="text-gray-600 font-bold mb-2">
@@ -121,7 +122,8 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
                       <label className="text-gray-800 font-semibold mb-1">
                         Title
                       </label>
-                      <h2 className="bg-gray-100 p-2 rounded-md w-fit text-center mb-4">
+                      <h2 className="bg-gray-100 p-2 rounded-md w-full text-center mb-4 font-semibold"
+                        style={{ whiteSpace: "pre-wrap" }}>
                         {project.title}
                       </h2>
                       <label className="text-gray-800 font-semibold mb-1">
@@ -148,7 +150,7 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
                         }}
                         className="bg-yellow-700 text-white px-8 py-2 rounded-md mt-4 hover:scale-110 transition duration-300"
                       >
-                        Preview
+                        Watch The Demo
                       </button>
                     </div>
                   </div>
@@ -217,7 +219,7 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
                     }}
                     className="bg-yellow-700 text-white px-8 py-2 rounded-md mt-4 hover:scale-110 transition duration-300"
                   >
-                    Preview
+                    Watch The Demo
                   </button>
                 </div>
               </div>
