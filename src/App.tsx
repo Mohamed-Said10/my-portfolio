@@ -37,7 +37,3 @@ function App() {
 }
 
 export default App;
-
-import ReactGA from 'react-ga4';
-
-ReactGA.initialize('G-E8GSZVYZJG');
