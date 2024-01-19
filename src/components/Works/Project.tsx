@@ -4,5 +4,6 @@ interface Project {
     imageUrl: string,
     category: string,
     videoUrl: string,
+    photos: string[],
 } 
 export default Project

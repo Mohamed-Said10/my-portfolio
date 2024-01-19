@@ -38,11 +38,11 @@ const Works = () => {
         </div>
         {selectedProject && (
           <div className="mt-8 sm:mt-16 mb-8 w-3/4 h-screen" id="video">
-            <h2 className="bg-white p-2 rounded-md text-xl lg:text-2xl font-semibold mb-2">
+            <VideoPlayer videoUrl={selectedProject.videoUrl} />
+            <h2 className="bg-white p-2 rounded-md text-xl lg:text-xl font-semibold mb-2">
               {selectedProject.title}
             </h2>
-            <VideoPlayer videoUrl={selectedProject.videoUrl} />
-            <p className="bg-white p-2 rounded-md w-full text-left mt-2"
+            <p className="bg-white p-2 rounded-md w- text-left mt-2"
                         style={{ whiteSpace: "pre-wrap" }}
                       >
                         {selectedProject.description.split("\n").map((line, index) => (
