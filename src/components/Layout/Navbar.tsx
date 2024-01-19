@@ -19,6 +19,12 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToRef }) => {
     }
   };
 
+  const [activeLink, setActiveLink] = useState("");
+
+  const handleLinkClick = (link: string) => {
+    setActiveLink(link);
+  };
+
   return (
     <nav className="home p-4 sticky top-0 z-50">
       <div className="container mx-auto flex justify-between items-center pl-4 pr-4 lg:pl-40 lg:pr-40">
@@ -57,45 +63,42 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToRef }) => {
         >
           <NavLink
             to="/"
-            onClick={() => scrollToRef(document.getElementById("home")!)}
-            className={({ isActive }) =>
-              isActive
-                ? "text-amber-500 rounded-2xl  lg:px-4 font-semibold text-center"
-                : "hover:text-amber-500 rounded-2xl lg:px-4 lg:py-2 md:px-4 md:py-2 sm:px-8 sm:py-2 font-semibold text-center"
+            onClick={() => {
+              handleLinkClick("home");
+              scrollToRef(document.getElementById("home")!)}
             }
+            className={`${activeLink === "home" ? "text-amber-500" : ""} 
+              rounded-2xl lg:px-4 font-semibold text-center`}
           >
             HOME
           </NavLink>
           <NavLink
             to="/about"
-            onClick={() => scrollToRef(document.getElementById("about")!)}
-            className={({ isActive }) =>
-              isActive
-                ? "text-amber-500 rounded-2xl  lg:px-4 font-semibold text-center"
-                : "hover:text-amber-500 rounded-2xl lg:px-4 lg:py-2 md:px-4 md:py-2 sm:px-8 sm:py-2 font-semibold text-center"
-            }
+            onClick={() => {
+              handleLinkClick("about");
+              scrollToRef(document.getElementById("about")!);
+            }}
+            className={`${activeLink === "about" ? "text-amber-500" : ""} rounded-2xl lg:px-4 lg:py-2 md:px-4 md:py-2 sm:px-8 sm:py-2 font-semibold text-center`}
           >
             ABOUT
           </NavLink>
           <NavLink
             to="/works"
-            onClick={() => scrollToRef(document.getElementById("works")!)}
-            className={({ isActive }) =>
-              isActive
-                ? "text-amber-500 rounded-2xl  lg:px-4 font-semibold text-center"
-                : "hover:text-amber-500 rounded-2xl lg:px-4 lg:py-2 md:px-4 md:py-2 sm:px-8 sm:py-2 font-semibold text-center"
-            }
+            onClick={() => {
+              handleLinkClick("works");
+              scrollToRef(document.getElementById("works")!);
+            }}
+            className={`${activeLink === "works" ? "text-amber-500" : ""} rounded-2xl lg:px-4 lg:py-2 md:px-4 md:py-2 sm:px-8 sm:py-2 font-semibold text-center`}
           >
             WORK
           </NavLink>
           <NavLink
             to="/contact"
-            onClick={() => scrollToRef(document.getElementById("contact")!)}
-            className={({ isActive }) =>
-              isActive
-                ? "text-amber-500 rounded-2xl lg:px-4 font-semibold text-center"
-                : "hover:text-amber-500 rounded-2xl lg:px-4 lg:py-2 md:px-4 md:py-2 sm:px-8 sm:py-2 font-semibold text-center"
-            }
+            onClick={() => {
+              handleLinkClick("contact");
+              scrollToRef(document.getElementById("contact")!);
+            }}
+            className={`${activeLink === "contact" ? "text-amber-500" : ""} rounded-2xl lg:px-4 lg:py-2 md:px-4 md:py-2 sm:px-8 sm:py-2 font-semibold text-center`}
           >
             CONTACT
           </NavLink>
