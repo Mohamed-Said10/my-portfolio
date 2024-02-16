@@ -118,7 +118,7 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
 
   const scrollToRef = (ref: HTMLElement) => {
     if (ref && isSmallScreen){
-    const navbarHeight = 500; // Adjust this value according to your navbar height
+    const navbarHeight = 260; // Adjust this value according to your navbar height
     const topOffset = ref.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
     window.scrollTo({ top: topOffset, behavior: "smooth" });
   } else if(!isSmallScreen){
