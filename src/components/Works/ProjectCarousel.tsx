@@ -7,6 +7,7 @@ import {
 } from "react-icons/ai";
 import "./Works.css";
 import { useEffect, useState } from "react";
+import VideoPlayer from "./VideoPlayer";
 
 const projects: Project[] = [
   {
@@ -20,7 +21,13 @@ const projects: Project[] = [
     imageUrl: "project3.jpg",
     category: "Web Application",
     videoUrl: "https://youtu.be/fcqP9Rhv-OU",
-    photos: ['/assets/figma.ico', '/assets/react.ico', '/assets/typescript.ico', '/assets/aws.ico','/assets/Amplify.png'],
+    photos: [
+      "/assets/figma.ico",
+      "/assets/react.ico",
+      "/assets/typescript.ico",
+      "/assets/aws.ico",
+      "/assets/Amplify.png",
+    ],
   },
   {
     title: "Redesign of a web application for employee monitoring",
@@ -34,7 +41,12 @@ const projects: Project[] = [
     imageUrl: "project1.jpg",
     category: "Web Application",
     videoUrl: "https://youtu.be/iD1SifMZh14?si=FzFtJ6w_LjI1BRGc",
-    photos: ['/assets/spring-boot.png', '/assets/react.ico', '/assets/java.ico', '/assets/angular.ico'],
+    photos: [
+      "/assets/spring-boot.png",
+      "/assets/react.ico",
+      "/assets/java.ico",
+      "/assets/angular.ico",
+    ],
   },
   {
     title: "E-Ticket Management System",
@@ -46,7 +58,11 @@ const projects: Project[] = [
     imageUrl: "project2.jpg",
     category: "Web Application",
     videoUrl: "https://youtu.be/WmK9gl9ynyk?si=CBQuOTI8fmdQh6Ap",
-    photos: ['/assets/adobe-xd.ico', '/assets/react.ico', '/assets/spring-boot.png'],
+    photos: [
+      "/assets/adobe-xd.ico",
+      "/assets/react.ico",
+      "/assets/spring-boot.png",
+    ],
   },
 ];
 
@@ -67,17 +83,24 @@ const slideRight = () => {
 
 const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
   openVideoDisplay,
-  scrollToRef,
 }) => {
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
-
-  const handleResize = () => {
-    setIsSmallScreen(window.innerWidth < 640); // Adjust this breakpoint as needed
-  };
+  const [isSmallScreen, setIsSmallScreen] = useState(true);
+  const [expandedVideoIndex, setExpandedVideoIndex] = useState<string | null>(
+    null
+  );
 
   useEffect(() => {
-    handleResize(); // Check screen size on mount
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 640);
+    };
+
+    // Initial check on mount
+    handleResize();
+
+    // Add event listener for resize events
     window.addEventListener("resize", handleResize);
+
+    // Cleanup function to remove event listener
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -93,13 +116,25 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
     slider ? (slider.scrollTop += 200) : null;
   };
 
+  const scrollToRef = (ref: HTMLElement) => {
+    if (ref && isSmallScreen){
+    const navbarHeight = 500; // Adjust this value according to your navbar height
+    const topOffset = ref.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+    window.scrollTo({ top: topOffset, behavior: "smooth" });
+  } else if(!isSmallScreen){
+    window.scrollTo({ top: ref.offsetTop - 50, behavior: "smooth" });
+  }
+  };
+  
+  
+
   return (
     <>
       <h1 className="text-center w-full mt-20 text-3xl font-bold">
         My Latest Works
       </h1>
       <div className="relative flex flex-col items-center justify-center my-16">
-        {isSmallScreen ? (
+        {isSmallScreen && (
           <>
             <div className="flex items-center justify-center">
               <AiOutlineUp
@@ -157,18 +192,38 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
                         />
                       ))}
                     </div>
-                    <div className="py-4">
-                      <button
-                        onClick={() => {
-                          openVideoDisplay(project);
-                          scrollToRef(document.getElementById("video")!);
-                        }}
-                        className="bg-yellow-700 text-white px-8 py-2 rounded-md mt-4 hover:scale-110 transition duration-300"
-                      >
-                        Watch The Demo
-                      </button>
-                    </div>
+                    {expandedVideoIndex !== project.videoUrl && (
+                      <div className="py-4">
+                        <button
+                          onClick={async () => {
+                            await setExpandedVideoIndex(project.videoUrl);
+                            scrollToRef(document.getElementById("close")!);
+                          }}
+                          className="bg-yellow-700 text-white px-8 py-2 rounded-md mt-4 hover:scale-110 transition duration-300"
+                        >
+                          Watch The Demo
+                        </button>
+                      </div>
+                    )}
+                    {expandedVideoIndex === project.videoUrl && (
+                      <div className="py-4">
+                        <button
+                          onClick={() => {
+                            setExpandedVideoIndex(null);
+                          }}
+                          className="bg-red-700 text-white px-8 py-2 rounded-md mt-4 hover:scale-110 transition duration-300"
+                          id="close"
+                        >
+                          Close The Demo
+                        </button>
+                      </div>
+                    )}
                   </div>
+                  {expandedVideoIndex === project.videoUrl && (
+                    <div id="smallvideo" className="">
+                      <VideoPlayer videoUrl={project.videoUrl} />
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -180,7 +235,8 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
               />
             </div>
           </>
-        ) : (
+        )}
+        {!isSmallScreen && (
           <>
             <div className="relative flex items-center justify-center">
               <AiOutlineLeft
@@ -227,14 +283,14 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
                               </span>
                             ))}
                         </p>
-                      {project.photos.map((photoUrl) => (
-                        <img
-                          key={photoUrl}
-                          src={photoUrl}
-                          alt={`Photo of ${project.title}`}
-                          className="w-12 h-12 object-cover rounded-md m-2 inline-block"
-                        />
-                      ))}
+                        {project.photos.map((photoUrl) => (
+                          <img
+                            key={photoUrl}
+                            src={photoUrl}
+                            alt={`Photo of ${project.title}`}
+                            className="w-12 h-12 object-cover rounded-md m-2 inline-block"
+                          />
+                        ))}
                       </div>
                       <div className="py-2">
                         <button

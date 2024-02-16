@@ -11,7 +11,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ videoUrl }) => {
 
   useEffect(() => {
     const handleResize = () => {
-      const newHeight = window.innerWidth < 640 ? '16vh' : '55vh'; // Adjust the heights based on screen size
+      const newHeight = window.innerWidth < 640 ? '35vh' : '55vh'; // Adjust the heights based on screen size
       setVideoHeight(newHeight);
     };
 
@@ -24,7 +24,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ videoUrl }) => {
   }, []);
 
   return (
-    <div className="video-player mt-24">
+    <div className="video-player mt-6">
       <ReactPlayer url={videoUrl} controls width='100%' height={videoHeight}/>
     </div>
   );

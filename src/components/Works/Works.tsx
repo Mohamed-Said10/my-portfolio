@@ -16,6 +16,7 @@ const Works = () => {
   const closeVideoDisplay = () => {
     setSelectedProject(null);
     setVideoVisible(false);
+    scrollToRef(document.getElementById("works")!);
   };
 
   const scrollToRef = (ref: HTMLElement) => {

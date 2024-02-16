@@ -5,6 +5,7 @@ export default {
   ],
   theme: {
     extend: {
+      screens: { 'xsm': { 'max': '640px' } },
     },
   },
   plugins: [

@@ -1,50 +1,9 @@
 import { useForm, ValidationError } from "@formspree/react";
 
 const Contact = () => {
-  /*const [senderEmail, setSenderEmail] = useState('');
-  const [emailContent, setEmailContent] = useState('');
-
-  const handleSenderEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSenderEmail(e.target.value);
-  };
-
-  const handleEmailContentChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setEmailContent(e.target.value);
-  };
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-  
-    try {
-      const response = await fetch('https://message.erguibi-mohamedsaid.com:3000/addMessage', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: senderEmail,
-          message: emailContent,
-        }),
-      });
-  
-      if (response.ok) {
-        // Request was successful, show success message or perform any other action
-        console.log('Message sent successfully!');
-      } else {
-        // Request failed, handle the error
-        console.error('Failed to send message');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  
-    setSenderEmail('');
-    setEmailContent('');
-  };*/
-
   const [state, handleSubmit] = useForm("mqkranda");
   if (state.succeeded) {
-    return <p>Thanks for joining!</p>;
+    
   }
 
   return (
@@ -92,8 +51,6 @@ const Contact = () => {
                 type="email"
                 name="email"
                 placeholder="Your Email"
-                //value={senderEmail}
-                //onChange={handleSenderEmailChange}
                 className="w-80 border border-gray-300 rounded-md p-2 focus:outline-none mb-4"
                 required
               />
@@ -105,8 +62,6 @@ const Contact = () => {
               <textarea
                 className="w-80 h-40 border border-gray-300 rounded-md p-2 focus:outline-none mb-4"
                 placeholder="Your message..."
-                //value={emailContent}
-                //onChange={handleEmailContentChange}
                 id="message"
                 name="message"
                 required
