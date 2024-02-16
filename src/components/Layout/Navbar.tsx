@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import "../Home/Home.css";
 
 interface NavbarProps {
+  scrollToRef:(ref: HTMLElement) => void;
 }
 
 const Navbar: React.FC<NavbarProps> = () => {
