@@ -13,7 +13,7 @@ const Home = () => {
         </div>
         <div className="col-span-1 flex justify-center items-center lg:mt-6">
           <div className="bable p-12 bg-orange-200 h-fit mx-auto md:mx-0 lg:mt-6">
-            <img src="/assets/photo.png" className="h-fit" alt="myimage" />
+            <img src="/assets/photo.png" className="h-fit sm:w-full md:w-auto" alt="myimage" />
           </div>
         </div>
       </div>
