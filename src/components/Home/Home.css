@@ -2,11 +2,23 @@
     background: #F2E3C3;
 }
 
-.bable{
-    -webkit-mask-image: url(data:image/svg+xml;base64,PCEtLT94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/LS0+CiAgICAgICAgICAgICAgPHN2ZyBpZD0ic3ctanMtYmxvYi1zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSI+CiAgICAgICAgICAgICAgICAgICAgPGRlZnM+IAogICAgICAgICAgICAgICAgICAgICAgICA8bGluZWFyR3JhZGllbnQgaWQ9InN3LWdyYWRpZW50IiB4MT0iMCIgeDI9IjEiIHkxPSIxIiB5Mj0iMCI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8c3RvcCBpZD0ic3RvcDEiIHN0b3AtY29sb3I9InJnYmEoMjU0LCAyMTUsIDE3MCwgMSkiIG9mZnNldD0iMCUiPjwvc3RvcD4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxzdG9wIGlkPSJzdG9wMiIgc3RvcC1jb2xvcj0icmdiYSgyNTQsIDIxNSwgMTcwLCAxKSIgb2Zmc2V0PSIxMDAlIj48L3N0b3A+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICAgICAgICAgICAgICAgICAgPC9kZWZzPgogICAgICAgICAgICAgICAgPHBhdGggZmlsbD0idXJsKCNzdy1ncmFkaWVudCkiIGQ9Ik0xOS44LC0zMy44QzI2LjUsLTMwLjQsMzMuNSwtMjYuOSwzOC40LC0yMS4yQzQzLjIsLTE1LjYsNDUuOSwtNy44LDQ1LjUsLTAuMkM0NS4yLDcuNCw0MS45LDE0LjksMzcuMywyMC45QzMyLjcsMjYuOSwyNi44LDMxLjUsMjAuMywzNC4zQzEzLjksMzcuMSw2LjksMzguMiwtMC42LDM5LjJDLTguMSw0MC4yLC0xNi4yLDQxLjEsLTIyLjcsMzguM0MtMjkuMiwzNS41LC0zNCwyOSwtMzcuMSwyMkMtNDAuMSwxNSwtNDEuMyw3LjUsLTQwLjgsMC4zQy00MC4yLC02LjksLTM4LC0xMy44LC0zNC40LC0xOS45Qy0zMC45LC0yNS45LC0yNiwtMzEuMiwtMjAsLTM1LjFDLTE0LjEsLTM5LC03LC00MS41LC0wLjMsLTQxLjFDNi41LC00MC42LDEzLC0zNy4yLDE5LjgsLTMzLjhaIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1MCA1MCkiIHN0cm9rZS13aWR0aD0iMCIgc3R5bGU9InRyYW5zaXRpb246IGFsbCAwLjNzIGVhc2UgMHM7IiBzdHJva2U9InVybCgjc3ctZ3JhZGllbnQpIj48L3BhdGg+CiAgICAgICAgICAgICAgPC9zdmc+);   
-    background: #FFA800;
+.home2 {
+    background-image: url('/assets/bg-photo.png');
+    background-size: cover;
+    background-position: center;
+    transform: translate(-5%, 0%);
+    background-repeat: no-repeat;
+    position: relative; /* Enable positioning */
+    opacity: 50%;
 }
 
-.home2{
-    height: 95vh;
-}
+  .home2 .absolute {
+    background: inherit; /* Use the same background as the parent */
+  }
+
+  @media (max-width: 768px) {
+    .home2 {
+      transform: translate(0%, -40%) rotate(90deg); /* Rotate the background by 90 degrees */
+      
+    }
+  }

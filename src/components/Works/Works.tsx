@@ -28,7 +28,7 @@ const Works = () => {
   return (
     <>
       <div
-        className="background min-h-screen flex flex-col justify-center items-center section"
+        className="bg-gradient-to-r from-[#F2E3C3] to-[#F2E3C3] via-stone-300 min-h-screen flex flex-col justify-center items-center section"
         id="works"
       >
         <div className="mb-2">

@@ -50,6 +50,7 @@ const Navbar: React.FC<NavbarProps> = () => {
 
   const handleLinkClick = (link: string) => {
     setActiveLink(link);
+    setIsMenuOpen(false)
   };
 
   const scrollToRef = (ref: HTMLElement) => {
@@ -61,7 +62,7 @@ const Navbar: React.FC<NavbarProps> = () => {
 
 
   return (
-    <nav className="home p-4 sticky top-0 z-50">
+    <nav className="bg-gradient-to-r from-[#F2E3C3] to-[#F2E3C3] via-stone-200 p-4 sticky top-0 z-50">
       <div className="container mx-auto flex justify-between items-center pl-4 pr-4 lg:pl-40 lg:pr-40">
         <div className="text-black">
           <h1 className="text-xl font-semibold hover:text-amber-500">
@@ -70,7 +71,7 @@ const Navbar: React.FC<NavbarProps> = () => {
         </div>
 
         {/* Responsive menu button */}
-        <div className="lg:hidden mr-4">
+        <div className="lg:hidden mx-4 bg-transparent">
           <button
             id="menu-button"
             onClick={(event) => {
@@ -94,7 +95,7 @@ const Navbar: React.FC<NavbarProps> = () => {
         {/* Navigation links */}
         <div
           ref={menuRef}
-          className={`lg:flex mr-4 ${
+          className={`lg:flex ml-4 bg-gradient-to-r from-[#F2E3C3] to-[#F2E3C3] via-stone-200 overflow-hidden ${
             isMenuOpen ? "flex" : "hidden"
           } items-center absolute top-full z-10 home ${
             windowWidth < 768 && isMenuOpen ? "w-full" : "w-auto"

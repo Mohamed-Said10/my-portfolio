@@ -8,6 +8,7 @@ import {
 import "./Works.css";
 import { useEffect, useState } from "react";
 import VideoPlayer from "./VideoPlayer";
+import { motion } from "framer-motion";
 
 const projects: Project[] = [
   {
@@ -81,6 +82,7 @@ const slideRight = () => {
   slider ? (slider.scrollLeft = slider.scrollLeft + 600) : null;
 };
 
+
 const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
   openVideoDisplay,
 }) => {
@@ -88,6 +90,8 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
   const [expandedVideoIndex, setExpandedVideoIndex] = useState<string | null>(
     null
   );
+
+  
 
   useEffect(() => {
     const handleResize = () => {
@@ -194,15 +198,33 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
                     </div>
                     {expandedVideoIndex !== project.videoUrl && (
                       <div className="py-4">
-                        <button
+                         <motion.button
                           onClick={async () => {
                             await setExpandedVideoIndex(project.videoUrl);
-                            scrollToRef(document.getElementById("close")!);
+                            const closeElement = document.getElementById("close");
+                            if (closeElement) {
+                              scrollToRef(closeElement);
+                            }
                           }}
-                          className="bg-yellow-700 text-white px-8 py-2 rounded-md mt-4 hover:scale-110 transition duration-300"
+                          className="bg-yellow-700 text-white px-8 py-2 rounded-md mt-4 relative overflow-hidden"
+                          animate={{
+                            boxShadow: [
+                              "0 0 0px rgba(255, 223, 0, 0.6)",
+                              "0 0 20px rgba(255, 223, 0, 0.8)",
+                              "0 0 40px rgba(255, 223, 0, 1)",
+                              "0 0 60px rgba(255, 223, 0, 0.8)",
+                              "0 0 20px rgba(255, 223, 0, 0.6)",
+                              "0 0 0px rgba(255, 223, 0, 0.6)",
+                            ], // Shadow pulses out and back
+                          }}
+                          transition={{
+                            duration: 1.5,
+                            ease: "easeInOut",
+                            repeat: Infinity,
+                          }}
                         >
                           Watch The Demo
-                        </button>
+                        </motion.button>
                       </div>
                     )}
                     {expandedVideoIndex === project.videoUrl && (
@@ -293,15 +315,33 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
                         ))}
                       </div>
                       <div className="py-2">
-                        <button
+                      <motion.button
                           onClick={async () => {
                             await openVideoDisplay(project);
-                            scrollToRef(document.getElementById("video")!);
+                            const videoElement = document.getElementById("video");
+                            if (videoElement) {
+                              scrollToRef(videoElement);
+                            }
                           }}
-                          className="bg-yellow-700 text-white px-8 py-2 rounded-md mt-4 hover:scale-110 transition duration-300"
+                          className="bg-yellow-700 text-white px-8 py-2 rounded-md mt-4 relative overflow-hidden"
+                          animate={{
+                            boxShadow: [
+                              "0 0 0px rgba(255, 223, 0, 0.6)",
+                              "0 0 20px rgba(255, 223, 0, 0.8)",
+                              "0 0 40px rgba(255, 223, 0, 1)",
+                              "0 0 60px rgba(255, 223, 0, 0.8)",
+                              "0 0 20px rgba(255, 223, 0, 0.6)",
+                              "0 0 0px rgba(255, 223, 0, 0.6)",
+                            ],
+                          }}
+                          transition={{
+                            duration: 1.5,
+                            ease: "easeInOut",
+                            repeat: Infinity,
+                          }}
                         >
                           Watch The Demo
-                        </button>
+                        </motion.button>
                       </div>
                     </div>
                   </div>

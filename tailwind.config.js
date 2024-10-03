@@ -5,7 +5,12 @@ export default {
   ],
   theme: {
     extend: {
-      screens: { 'xsm': { 'max': '640px' } },
+      screens: { 
+        'xsm': { 'max': '640px' },
+        'sm': '640px',
+        'md': '768px', 
+        'lg': '1024px',
+     },
     },
   },
   plugins: [
