@@ -28,17 +28,17 @@ const Works = () => {
   return (
     <>
       <div
-        className="bg-gradient-to-r from-[#F2E3C3] to-[#F2E3C3] via-stone-300 min-h-screen flex flex-col justify-center items-center section"
+        className="bg-gradient-to-r from-[#F2E3C3] to-[#F2E3C3] via-stone-300 min-h-screen flex flex-col justify-center items-center section w-full overflow-hidden"
         id="works"
       >
-        <div className="mb-2">
+        <div className="w-full max-w-[1600px] mx-auto">
           <ProjectCarousel
             openVideoDisplay={openVideoDisplay}
             scrollToRef={scrollToRef}
           />
         </div>
         {selectedProject && (
-          <div className="mt-8 sm:mt-16 mb-8 w-3/4 h-screen" id="video">
+          <div className="mt-8 sm:mt-16 mb-8 w-full max-w-4xl px-4" id="video">
             <VideoPlayer videoUrl={selectedProject.videoUrl} />
             <h2 className="bg-white p-2 rounded-md text-xl lg:text-xl font-semibold mb-2">
               {selectedProject.title}

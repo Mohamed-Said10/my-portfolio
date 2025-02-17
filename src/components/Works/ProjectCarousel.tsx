@@ -12,6 +12,26 @@ import { motion } from "framer-motion";
 
 const projects: Project[] = [
   {
+    title: "My AirBnB Concierge Agency Website",
+    description:
+      "Design and development of my AirBnB Concierge Agency Website.\n" +
+      "UI/UX designed using Figma.\n" +
+      "Developped using Next.js, React and Typescript.\n" +
+      "Built with Next.js.\n" +
+      "Deployed on Vercel.",
+    imageUrl: "project3.jpg",
+    category: "Website",
+    videoUrl: "https://youtu.be/C5kp30SrQrM",
+
+    photos: [
+      "/assets/figma.ico",
+      "/assets/react.ico",
+      "/assets/typescript.ico",
+      "/assets/supabase.png",
+      "/assets/vercel.png",
+    ],
+  },
+  {
     title: "My Travel Agency Web Application",
     description:
       "Design and development of my Travel Agency Web Application.\n" +
@@ -280,20 +300,20 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
         )}
         {!isSmallScreen && (
           <>
-            <div className="relative flex items-center justify-center">
+            <div className="relative flex items-center justify-center w-full max-w-7xl px-4">
               <AiOutlineLeft
-                className="opacity-50 cursor-pointer hover:opacity-100"
+                className="opacity-50 cursor-pointer hover:opacity-100 z-10"
                 onClick={slideLeft}
                 size={40}
               />
               <div
                 id="slider"
-                className="w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide"
+                className="w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide mx-1"
               >
                 {projects.map((project) => (
                   <div
                     key={project.title}
-                    className="bg-white inline-block w-1/3 px-8 py-6 m-2 rounded-lg shadow-md cursor-pointer hover:shadow-xl transition duration-300"
+                    className="bg-white inline-block w-[500px] h-[500px] px-6 py-6 m-2 rounded-lg shadow-md cursor-pointer hover:shadow-xl transition duration-300"
                   >
                     <div className="text-center">
                       <p className="text-gray-600 font-bold mb-2">
@@ -312,7 +332,7 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
                           Description
                         </label>
                         <p
-                          className="bg-gray-100 p-2 rounded-md w-full text-left"
+                          className="bg-gray-100 p-2 rounded-md w-full h-[170px] text-left"
                           style={{ whiteSpace: "pre-wrap" }}
                         >
                           {project.description
@@ -368,7 +388,7 @@ const ProjectCarousel: React.FC<ProjectCarouselProps> = ({
                 ))}
               </div>
               <AiOutlineRight
-                className="opacity-50 cursor-pointer hover:opacity-100"
+                className="opacity-50 cursor-pointer hover:opacity-100 z-10"
                 onClick={slideRight}
                 size={40}
               />
