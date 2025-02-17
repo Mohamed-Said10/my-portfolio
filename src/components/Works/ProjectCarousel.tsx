@@ -12,6 +12,26 @@ import { motion } from "framer-motion";
 
 const projects: Project[] = [
   {
+    title: "My Travel Agency Web Application",
+    description:
+      "Design and development of my Travel Agency Web Application.\n" +
+      "UI/UX designed using Figma.\n" +
+      "Developped using Next.js, React and Typescript.\n" +
+      "Built with vite.\n" +
+      "Deployed on Vercel.",
+    imageUrl: "project3.jpg",
+    category: "Web Application",
+    videoUrl: "https://youtu.be/iFgaxnsLPjQ",
+
+    photos: [
+      "/assets/figma.ico",
+      "/assets/react.ico",
+      "/assets/typescript.ico",
+      "/assets/supabase.png",
+      "/assets/vercel.png",
+    ],
+  },
+  {
     title: "My Portfolio Website",
     description:
       "Design and development of my Portfolio application.\n" +
@@ -54,7 +74,7 @@ const projects: Project[] = [
     description:
       "UI/UX modeling using Adobe XD\n" +
       "Design, and development of a web application " +
-      "managing customer incident tickets\n" +
+      "Managing customer incident tickets\n" +
       "REST architecture using Spring Boot for the backend and React for the frontend.",
     imageUrl: "project2.jpg",
     category: "Web Application",
