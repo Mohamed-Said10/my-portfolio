@@ -12,6 +12,60 @@ import { motion } from "framer-motion";
 
 const projects: Project[] = [
   {
+    title: "Pastry Training Courses Platform",
+    description:
+      "Pastry Training Courses Platform to show the academic center's courses, prices, and offers.\n" +
+      "Design and development of a Pastry Training Courses Platform.\n" +
+      "UI/UX designed using Figma.\n" +
+      "Developped using Wordpress and Elementor.\n" +
+      "Deployed on Hostinger.",
+    imageUrl: "pastry.jpg",
+    category: "Website",
+    videoUrl: "https://youtu.be/nz_W6UQNQxA",
+    photos: [
+      "/assets/figma.ico",
+      "/assets/wordpress.png",
+      "/assets/elementor.png",
+      "/assets/hostinger.png",
+    ],
+  },
+  {
+    title: "Spa & Wellness Center Website",
+    description:
+      "Spa Website to show the center's services, prices, and offers.\n" +
+      "Design and development of a Spa & Wellness Center Website.\n" +
+      "UI/UX designed using Figma.\n" +
+      "Developped using Wordpress and Elementor.\n" +
+      "Deployed on Hostinger.",
+    imageUrl: "matseel.jpg",
+    category: "Website",
+    videoUrl: "https://youtu.be/h6tfU3Q5NM0?si=hsN-o8u4pSyc5Ms5",
+    photos: [
+      "/assets/figma.ico",
+      "/assets/wordpress.png",
+      "/assets/elementor.png",
+      "/assets/hostinger.png",
+    ],
+  },
+  {
+    title: "E-Commerce Traditional Clothing Store Website",
+    description:
+      "Design and development of a traditional clothing store website.\n" +
+      "UI/UX designed using Figma.\n" +
+      "Developped using Wordpress, Woocommerce and WooPayment.\n" +
+      "Deployed on Hostinger.",
+    imageUrl: "project5.jpg",
+    category: "E-Commerce Store",
+    videoUrl: "https://www.youtube.com/watch?v=9fvxDyK5-TU&t=37s",
+    photos: [
+      "/assets/figma.ico",
+      "/assets/wordpress.png",
+      "/assets/woo.png",
+      "/assets/woopayments.png",
+      "/assets/hostinger.png",
+    ],
+  },
+  {
     title: "My AirBnB Concierge Agency Website",
     description:
       "Design and development of my AirBnB Concierge Agency Website.\n" +
